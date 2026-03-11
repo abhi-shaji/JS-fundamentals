@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async Code</title>
+</head>
+<body>
+    <h1>Asynchronous JavaScript</h1>
+    <button id="start">START</button>
+    <button id="stop">STOP</button>
+</body>
+<script>
+    const printDate =() => {
+        console.log("Abhi",Date.now());
+    }
+    let printInterval;
+    document.querySelector('#start').addEventListener('click', () =>{
+         printInterval = setInterval(printDate, 1000);
+    }) 
+    document.querySelector('#stop').addEventListener('click', () =>{
+        clearInterval(printInterval);
+    })
+</script>
+</html>

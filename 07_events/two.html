@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async Code</title>
+</head>
+<body>
+    <h1>Asynchronous JavaScript</h1>
+    <button id="stop">STOP</button>
+</body>
+<script>
+    // document.getElementById('stop').addEventListener('click', function() {
+    //     setTimeout(() => {
+    //     console.log("Abhinav");
+    //  }, 200);
+    // });
+    
+    const changeText = () => {
+        document.querySelector('h1').innerText = "Best JS Series";
+    }
+
+    const changeHeadingTimeout = setTimeout((changeText), 2000);
+
+    document.getElementById('stop').addEventListener('click', () => {
+        clearTimeout(changeHeadingTimeout);
+        console.log("STOPPED");
+
+    });
+
+</script>
+</html>
